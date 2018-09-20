@@ -27,7 +27,7 @@ node {
     stage('NPM Install') {
         withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
             sh 'npm install'
-            sh 'npm install -g angular-cli'
+            sh 'npm install -g @angular/cli'
         }
     }
 
