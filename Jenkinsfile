@@ -12,7 +12,7 @@ properties(
         )
     ]
 )
-node {
+node('node') {
     stage('Checkout') {
         //disable to recycle workspace data to save time/bandwidth
         deleteDir()
@@ -23,7 +23,7 @@ node {
         //env.git_commit_id_short = env.git_commit_id.take(7)
         //currentBuild.displayName = "#${currentBuild.number}-${env.git_commit_id_short}"
     }
-
+   
     stage('NPM Install') {
         withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
             sh 'npm install'
